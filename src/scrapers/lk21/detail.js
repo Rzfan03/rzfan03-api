@@ -3,43 +3,76 @@ const { loadCheerio } = require('../../utils/parser');
 const { urls } = require('../../config');
 
 async function scrapeDetail(slug) {
-  const html = await fetchHTML('/' + slug + '/', urls.lk21);
+  const html = await fetchHTML('/' + slug, urls.lk21);
   const $ = loadCheerio(html);
 
-  // Title from h1
+  // Title from h1 (e.g. "Nonton Tiger's Trigger (2024) Sub Indo")
   const title = $('h1').first().text().trim()
     .replace(/^Nonton\s+/, '').replace(/\s+Sub\s+Indo$/, '').trim();
 
-  // Poster from meta or img
-  const poster = $('meta[property="og:image"]').attr('content')
-    || $('img[itemprop="image"]').attr('src')
-    || $('img').first().attr('src') || '';
+  // Poster
+  const poster = $('[itemprop="image"]').attr('content') ||
+    $('meta[property="og:image"]').attr('content') || '';
 
-  // Synopsis from meta description
-  const synopsis = $('meta[property="og:description"]').attr('content')
-    || $('meta[name="description"]').attr('content') || '';
+  // Synopsis from structured data
+  const synopsis = $('[itemprop="description"]').text().trim() ||
+    $('meta[property="og:description"]').attr('content') || '';
 
-  // Try to extract info from page text
-  const pageText = $.html();
-  const yearMatch = pageText.match(/(\d{4})/);
-  const year = yearMatch ? yearMatch[1] : '';
+  // Year
+  const year = $('[itemprop="datePublished"]').attr('content') || '';
 
-  // Genres from links
-  const genres = [];
-  $('a[href*="/genre/"]').each((_, el) => {
-    const text = $(el).text().trim();
-    if (text && !genres.includes(text)) genres.push(text);
+  // Duration (PT85M → "85m")
+  const durationRaw = $('[itemprop="duration"]').attr('content') || '';
+  const durMatch = durationRaw.match(/PT(?:(\d+)H)?(?:(\d+)M)?/);
+  const duration = durMatch
+    ? [durMatch[1] ? durMatch[1] + 'h' : '', durMatch[2] ? durMatch[2] + 'm' : ''].filter(Boolean).join(' ')
+    : '';
+
+  // Rating
+  const rating = $('[itemprop="ratingValue"]').text().trim() || '';
+  const bestRating = $('[itemprop="bestRating"]').text().trim() || '';
+  const ratingCount = $('[itemprop="ratingCount"]').text().trim() || '';
+
+  // Genres — from og:description (most reliable: "Genre: Action.  Rating: ...")
+  const ogDesc = $('meta[property="og:description"]').attr('content') || '';
+  const genreMatch = ogDesc.match(/Genre:\s*([^.]+)/i);
+  const genres = genreMatch
+    ? [...new Set(genreMatch[1].split(',').map(g => g.trim()).filter(Boolean))]
+    : [];
+  // Fallback: itemprop="genre"
+  if (!genres.length) {
+    $('[itemprop="genre"]').each((_, el) => {
+      const name = $(el).text().trim();
+      if (name && !genres.includes(name)) genres.push(name);
+    });
+  }
+
+  // Actors
+  const actors = [];
+  $('[itemprop="actor"]').each((_, el) => {
+    const actor = $(el).next('[itemprop="name"]').text().trim() || $(el).text().trim();
+    if (actor && !actors.includes(actor)) actors.push(actor);
   });
 
-  // Streaming iframe
-  const streamingUrl = $('iframe').attr('src') || $('iframe').attr('data-src') || '';
+  // Streaming servers
+  const servers = [];
+  $('button[onclick*="switchServer"]').each((_, el) => {
+    const btn = $(el);
+    const onclick = btn.attr('onclick') || '';
+    const urlMatch = onclick.match(/switchServer\('([^']+)'/);
+    servers.push({
+      name: btn.text().trim(),
+      url: urlMatch ? urlMatch[1] : '',
+    });
+  });
 
   // Download links
   const downloads = [];
-  $('a[href*="download"], a[href*="dl"]').each((_, el) => {
-    const href = $(el).attr('href') || '';
-    const label = $(el).text().trim();
-    if (href && label) downloads.push({ label, url: href });
+  $('a[onclick*="download"], a[href*="download"]').each((_, el) => {
+    const a = $(el);
+    const label = a.text().trim();
+    const href = a.attr('href') || a.attr('onclick') || '';
+    if (label && href) downloads.push({ label, url: href });
   });
 
   return {
@@ -48,10 +81,12 @@ async function scrapeDetail(slug) {
     poster,
     synopsis,
     year,
+    duration,
+    rating: rating ? { score: rating, best: bestRating, count: ratingCount } : null,
     genres,
-    streamingUrl,
+    actors,
+    servers,
     downloads,
-    note: 'LK21 is a JS SPA. Streaming/download links may require browser rendering.',
   };
 }
 
