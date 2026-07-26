@@ -1,4 +1,4 @@
-const BASE = location.origin;
+const BASE = 'https://rzfan03-api.vercel.app';
 let rawResponse = '';
 let history = JSON.parse(localStorage.getItem('rz_api_history') || '[]');
 
