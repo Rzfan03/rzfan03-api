@@ -240,16 +240,16 @@
           <span class="h-2.5 w-2.5 rounded-full bg-zz-border"></span>
           <span class="h-2.5 w-2.5 rounded-full bg-zz-border"></span>
           <span class="h-2.5 w-2.5 rounded-full bg-zz-border"></span>
-          <span class="ml-2 font-mono text-xs text-zz-muted/40">terminal</span>
+          <span class="ml-2 font-mono text-xs text-zz-muted/70">terminal</span>
         </div>
         <div class="p-5 font-mono text-xs leading-6 md:text-sm md:leading-7">
-          <div><span class="text-zz-muted">$ </span><span class="text-zz-text">curl</span> <span class="text-zz-muted/60">https://rzfan03-api.vercel.app/api/home</span></div>
-          <div class="mt-2 text-zz-muted/30">{</div>
-          <div class="pl-4 text-zz-muted/50">"success": <span class="text-zz-success">true</span>,</div>
-          <div class="pl-4 text-zz-muted/50">"data": {</div>
-          <div class="pl-8 text-zz-muted/50">"latest": <span class="text-zz-muted/30">[ ... ]</span></div>
-          <div class="pl-4 text-zz-muted/50">}</div>
-          <div class="text-zz-muted/30">}</div>
+          <div><span class="text-zz-muted">$ </span><span class="text-zz-text">curl</span> <span class="text-zz-muted/90">https://rzfan03-api.vercel.app/api/home</span></div>
+          <div class="mt-2 text-zz-muted/90">{</div>
+          <div class="pl-4 text-zz-muted/80">"success": <span class="text-zz-success">true</span>,</div>
+          <div class="pl-4 text-zz-muted/80">"data": {</div>
+          <div class="pl-8 text-zz-muted/80">"latest": <span class="text-zz-muted/90">[ ... ]</span></div>
+          <div class="pl-4 text-zz-muted/80">}</div>
+          <div class="text-zz-muted/90">}</div>
         </div>
       </div>
     </div>
@@ -326,9 +326,9 @@
 
       <div class="reveal mb-5">
         <div class="search-box relative rounded-zz border border-zz-border bg-zz-surface transition-all">
-          <svg class="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-zz-muted/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input id="epSearch" type="text" placeholder="Cari endpoint... (Ctrl+K)" class="pg-input w-full rounded-zz bg-transparent py-2.5 pl-10 pr-12 font-mono text-sm text-zz-text outline-none placeholder:text-zz-muted/40">
-          <kbd class="absolute right-3 top-1/2 -translate-y-1/2 rounded-zz-sm border border-zz-border bg-zz-bg px-1.5 py-0.5 font-mono text-[10px] text-zz-muted/40">Ctrl K</kbd>
+          <svg class="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-zz-muted/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input id="epSearch" type="text" placeholder="Cari endpoint... (Ctrl+K)" class="pg-input w-full rounded-zz bg-transparent py-2.5 pl-10 pr-12 font-mono text-sm text-zz-text outline-none placeholder:text-zz-muted/70">
+          <kbd class="absolute right-3 top-1/2 -translate-y-1/2 rounded-zz-sm border border-zz-border bg-zz-bg px-1.5 py-0.5 font-mono text-[10px] text-zz-muted/70">Ctrl K</kbd>
         </div>
       </div>
 
@@ -348,12 +348,12 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/home</code>
-              <span class="ml-auto text-xs text-zz-muted/50">Latest Episodes</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">Latest Episodes</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-3 text-sm text-zz-muted">25 episode anime terbaru dari Samehadaku.</p>
-              <pre class="mb-4 overflow-x-auto rounded-zz bg-zz-bg p-4 font-mono text-xs leading-5 text-zz-muted/50">{ "success": true, "data": { "latest": [ ... ] } }</pre>
+              <pre class="mb-4 overflow-x-auto rounded-zz bg-zz-bg p-4 font-mono text-xs leading-5 text-zz-muted/80">{ "success": true, "data": { "latest": [ ... ] } }</pre>
               <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/home')">Try it</button>
             </div>
           </div>
@@ -361,8 +361,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/anime/ongoing</code>
-              <span class="ml-auto text-xs text-zz-muted/50">Ongoing</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">Ongoing</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-2 text-sm text-zz-muted">Anime ongoing yang sedang tayang.</p>
@@ -374,8 +374,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/anime/complete</code>
-              <span class="ml-auto text-xs text-zz-muted/50">Complete</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">Complete</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-2 text-sm text-zz-muted">Anime yang sudah tamat.</p>
@@ -387,8 +387,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/anime/list</code>
-              <span class="ml-auto text-xs text-zz-muted/50">All Anime</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">All Anime</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-2 text-sm text-zz-muted">Semua daftar anime.</p>
@@ -400,8 +400,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/anime/:slug</code>
-              <span class="ml-auto text-xs text-zz-muted/50">Detail</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">Detail</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-2 text-sm text-zz-muted">Score, status, episodes, genres, synopsis.</p>
@@ -413,8 +413,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/episode/:slug</code>
-              <span class="ml-auto text-xs text-zz-muted/50">Episode</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">Episode</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-2 text-sm text-zz-muted">Link streaming dan download per episode.</p>
@@ -426,8 +426,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/genres</code>
-              <span class="ml-auto text-xs text-zz-muted/50">All Genres</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">All Genres</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-3 text-sm text-zz-muted">Semua genre anime yang tersedia.</p>
@@ -438,8 +438,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/genres/:slug</code>
-              <span class="ml-auto text-xs text-zz-muted/50">By Genre</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">By Genre</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-2 text-sm text-zz-muted">Anime berdasarkan genre.</p>
@@ -451,8 +451,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/anime/search?q=</code>
-              <span class="ml-auto text-xs text-zz-muted/50">Search</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">Search</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-2 text-sm text-zz-muted">Cari anime berdasarkan judul.</p>
@@ -464,8 +464,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/jadwal</code>
-              <span class="ml-auto text-xs text-zz-muted/50">Schedule</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">Schedule</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-3 text-sm text-zz-muted">Jadwal rilis anime per hari.</p>
@@ -480,12 +480,12 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/lk21/home</code>
-              <span class="ml-auto text-xs text-zz-muted/50">300+ Movies</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">300+ Movies</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-3 text-sm text-zz-muted">Film terbaru dengan poster, tahun, slug. Server-side — 300 film per request.</p>
-              <pre class="mb-4 overflow-x-auto rounded-zz bg-zz-bg p-4 font-mono text-xs leading-5 text-zz-muted/50">{ "title": "...", "slug": "...", "poster": "...", "year": "2024" }</pre>
+              <pre class="mb-4 overflow-x-auto rounded-zz bg-zz-bg p-4 font-mono text-xs leading-5 text-zz-muted/80">{ "title": "...", "slug": "...", "poster": "...", "year": "2024" }</pre>
               <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/lk21/home')">Try it</button>
             </div>
           </div>
@@ -493,8 +493,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/lk21/movie/:slug</code>
-              <span class="ml-auto text-xs text-zz-muted/50">Movie Detail</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">Movie Detail</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-3 text-sm text-zz-muted">Poster, synopsis, rating, aktor, servers streaming, link download.</p>
@@ -505,8 +505,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/lk21/search?q=</code>
-              <span class="ml-auto text-xs text-zz-muted/50">Search</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">Search</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-2 text-sm text-zz-muted">Cari film berdasarkan judul.</p>
@@ -518,8 +518,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/lk21/genre/:slug</code>
-              <span class="ml-auto text-xs text-zz-muted/50">By Genre</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">By Genre</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-2 text-sm text-zz-muted">Film berdasarkan genre.</p>
@@ -531,8 +531,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/lk21/country/:slug</code>
-              <span class="ml-auto text-xs text-zz-muted/50">By Country</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">By Country</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-2 text-sm text-zz-muted">Film berdasarkan negara.</p>
@@ -544,8 +544,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/lk21/list</code>
-              <span class="ml-auto text-xs text-zz-muted/50">All Movies</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">All Movies</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-2 text-sm text-zz-muted">Semua daftar film LK21.</p>
@@ -561,8 +561,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/manga/home</code>
-              <span class="ml-auto text-xs text-zz-muted/50">Popular + Latest</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">Popular + Latest</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-3 text-sm text-zz-muted">Manga populer dan terbaru dari Komiku.org.</p>
@@ -573,8 +573,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/manga/:slug</code>
-              <span class="ml-auto text-xs text-zz-muted/50">Detail</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">Detail</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-2 text-sm text-zz-muted">Detail manga + chapter list.</p>
@@ -586,8 +586,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/manga/chapter/:slug</code>
-              <span class="ml-auto text-xs text-zz-muted/50">Chapter Pages</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">Chapter Pages</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-2 text-sm text-zz-muted">Halaman gambar chapter manga.</p>
@@ -599,8 +599,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/manga/search?q=</code>
-              <span class="ml-auto text-xs text-zz-muted/50">Search</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">Search</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-2 text-sm text-zz-muted">Cari manga via htmx API Komiku.</p>
@@ -612,8 +612,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/manga/genres</code>
-              <span class="ml-auto text-xs text-zz-muted/50">Genres</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">Genres</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-3 text-sm text-zz-muted">Semua genre manga yang tersedia.</p>
@@ -624,8 +624,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/manga/genre/:slug</code>
-              <span class="ml-auto text-xs text-zz-muted/50">By Genre</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">By Genre</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-2 text-sm text-zz-muted">Manga berdasarkan genre.</p>
@@ -637,8 +637,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/manga/library</code>
-              <span class="ml-auto text-xs text-zz-muted/50">Library</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">Library</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-2 text-sm text-zz-muted">Library manga dengan filter parameters.</p>
@@ -654,8 +654,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/download/youtube?url=</code>
-              <span class="ml-auto text-xs text-zz-muted/50">YouTube</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">YouTube</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-2 text-sm text-zz-muted">Download video dari YouTube.</p>
@@ -666,8 +666,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/download/tiktok?url=</code>
-              <span class="ml-auto text-xs text-zz-muted/50">TikTok</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">TikTok</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-2 text-sm text-zz-muted">Download TikTok tanpa watermark.</p>
@@ -678,8 +678,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/download/instagram?url=</code>
-              <span class="ml-auto text-xs text-zz-muted/50">Instagram</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">Instagram</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-2 text-sm text-zz-muted">Download Reel/Video dari Instagram.</p>
@@ -690,8 +690,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/download/twitter?url=</code>
-              <span class="ml-auto text-xs text-zz-muted/50">Twitter/X</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">Twitter/X</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-2 text-sm text-zz-muted">Download video dari tweet.</p>
@@ -706,12 +706,12 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-warning/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-warning">POST</span>
               <code class="font-mono text-sm text-zz-text">/api/tools/qrcode</code>
-              <span class="ml-auto text-xs text-zz-muted/50">QR Generator</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">QR Generator</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-3 text-sm text-zz-muted">Generate QR Code sebagai base64 image.</p>
-              <pre class="mb-4 overflow-x-auto rounded-zz bg-zz-bg p-4 font-mono text-xs leading-5 text-zz-muted/50">{ "text": "https://example.com" }</pre>
+              <pre class="mb-4 overflow-x-auto rounded-zz bg-zz-bg p-4 font-mono text-xs leading-5 text-zz-muted/80">{ "text": "https://example.com" }</pre>
               <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="quickTry('POST','/api/tools/qrcode',JSON.stringify({text:'https://rzfan03-api.vercel.app'},null,2))">Try it</button>
             </div>
           </div>
@@ -719,11 +719,11 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-warning/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-warning">POST</span>
               <code class="font-mono text-sm text-zz-text">/api/tools/base64/encode</code>
-              <span class="ml-auto text-xs text-zz-muted/50">Base64 Encode</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">Base64 Encode</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
-              <pre class="mb-4 overflow-x-auto rounded-zz bg-zz-bg p-4 font-mono text-xs leading-5 text-zz-muted/50">{ "text": "Hello World" }</pre>
+              <pre class="mb-4 overflow-x-auto rounded-zz bg-zz-bg p-4 font-mono text-xs leading-5 text-zz-muted/80">{ "text": "Hello World" }</pre>
               <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="quickTry('POST','/api/tools/base64/encode',JSON.stringify({text:'Hello World'},null,2))">Try it</button>
             </div>
           </div>
@@ -731,11 +731,11 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-warning/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-warning">POST</span>
               <code class="font-mono text-sm text-zz-text">/api/tools/base64/decode</code>
-              <span class="ml-auto text-xs text-zz-muted/50">Base64 Decode</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">Base64 Decode</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
-              <pre class="mb-4 overflow-x-auto rounded-zz bg-zz-bg p-4 font-mono text-xs leading-5 text-zz-muted/50">{ "encoded": "SGVsbG8gV29ybGQ=" }</pre>
+              <pre class="mb-4 overflow-x-auto rounded-zz bg-zz-bg p-4 font-mono text-xs leading-5 text-zz-muted/80">{ "encoded": "SGVsbG8gV29ybGQ=" }</pre>
               <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="quickTry('POST','/api/tools/base64/decode',JSON.stringify({encoded:'SGVsbG8gV29ybGQ='},null,2))">Try it</button>
             </div>
           </div>
@@ -743,8 +743,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/tools/ip/:ip</code>
-              <span class="ml-auto text-xs text-zz-muted/50">IP Lookup</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">IP Lookup</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-2 text-sm text-zz-muted">Country, city, ISP dari IP address.</p>
@@ -756,8 +756,8 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/tools/currency?from=&to=&amount=</code>
-              <span class="ml-auto text-xs text-zz-muted/50">Currency</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">Currency</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-2 text-sm text-zz-muted">Konversi mata uang.</p>
@@ -769,11 +769,11 @@
             <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
               <span class="shrink-0 rounded-zz-sm bg-zz-warning/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-warning">POST</span>
               <code class="font-mono text-sm text-zz-text">/api/tools/shorturl</code>
-              <span class="ml-auto text-xs text-zz-muted/50">Short URL</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">Short URL</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
-              <pre class="mb-4 overflow-x-auto rounded-zz bg-zz-bg p-4 font-mono text-xs leading-5 text-zz-muted/50">{ "url": "https://google.com" }</pre>
+              <pre class="mb-4 overflow-x-auto rounded-zz bg-zz-bg p-4 font-mono text-xs leading-5 text-zz-muted/80">{ "url": "https://google.com" }</pre>
               <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="quickTry('POST','/api/tools/shorturl',JSON.stringify({url:'https://google.com'},null,2))">Try it</button>
             </div>
           </div>
@@ -786,13 +786,13 @@
               <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
               <code class="font-mono text-sm text-zz-text">/api/search?q=query</code>
               <span class="ml-1 shrink-0 rounded-zz-sm bg-zz-accent/20 px-1.5 py-0.5 font-mono text-[9px] font-bold text-zz-accent">UNIFIED</span>
-              <span class="ml-auto text-xs text-zz-muted/50">All Sources</span>
-              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="ml-auto text-xs text-zz-muted/80">All Sources</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/70 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
               <p class="mb-3 text-sm text-zz-muted">Satu request ke anime + LK21 + manga sekaligus. Promise.allSettled untuk fault tolerance.</p>
               <p class="mb-3 text-xs text-zz-muted/70">Query: <code class="font-mono text-zz-accent2/70">?q=</code> string (required)</p>
-              <pre class="mb-4 overflow-x-auto rounded-zz bg-zz-bg p-4 font-mono text-xs leading-5 text-zz-muted/50">{ "success": true, "data": { "anime": [...], "lk21": [...], "manga": [...] } }</pre>
+              <pre class="mb-4 overflow-x-auto rounded-zz bg-zz-bg p-4 font-mono text-xs leading-5 text-zz-muted/80">{ "success": true, "data": { "anime": [...], "lk21": [...], "manga": [...] } }</pre>
               <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/search?q=one+piece')">Try it</button>
             </div>
           </div>
@@ -818,8 +818,8 @@
           </select>
           <div class="h-5 w-px bg-zz-border"></div>
           <div class="flex flex-1 items-center">
-            <span class="hidden pl-3 font-mono text-[11px] text-zz-muted/30 lg:inline">https://rzfan03-api.vercel.app</span>
-            <input id="pgUrl" type="text" value="/api/home" class="pg-input flex-1 bg-transparent px-3 py-2.5 font-mono text-sm text-zz-text outline-none placeholder:text-zz-muted/30" placeholder="/api/home" spellcheck="false">
+            <span class="hidden pl-3 font-mono text-[11px] text-zz-muted/90 lg:inline">https://rzfan03-api.vercel.app</span>
+            <input id="pgUrl" type="text" value="/api/home" class="pg-input flex-1 bg-transparent px-3 py-2.5 font-mono text-sm text-zz-text outline-none placeholder:text-zz-muted/90" placeholder="/api/home" spellcheck="false">
           </div>
           <button id="sendBtn" class="flex items-center gap-2 bg-zz-accent px-5 py-2.5 font-mono text-xs font-bold text-white transition-colors hover:bg-zz-accent3" onclick="sendRequest()">
             <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
@@ -828,35 +828,35 @@
         </div>
         <div id="pgBodyWrap" class="hidden border-b border-zz-border">
           <div class="flex items-center justify-between bg-zz-surface2 px-5 py-1.5">
-            <span class="font-mono text-[11px] text-zz-muted/50">Request Body</span>
-            <span class="font-mono text-[10px] text-zz-muted/30">JSON</span>
+            <span class="font-mono text-[11px] text-zz-muted/80">Request Body</span>
+            <span class="font-mono text-[10px] text-zz-muted/90">JSON</span>
           </div>
-          <textarea id="pgBody" rows="4" class="w-full resize-y bg-transparent px-5 pb-3 pt-2 font-mono text-sm text-zz-text outline-none placeholder:text-zz-muted/30" placeholder='{"url": "..."}' spellcheck="false"></textarea>
+          <textarea id="pgBody" rows="4" class="w-full resize-y bg-transparent px-5 pb-3 pt-2 font-mono text-sm text-zz-text outline-none placeholder:text-zz-muted/90" placeholder='{"url": "..."}' spellcheck="false"></textarea>
         </div>
         <div class="flex items-center justify-between border-b border-zz-border px-5 py-2">
           <div class="flex items-center gap-2">
-            <span class="font-mono text-[11px] text-zz-muted/50">Response</span>
+            <span class="font-mono text-[11px] text-zz-muted/80">Response</span>
             <span id="pgStatus" class="rounded-zz-sm px-1.5 py-0.5 font-mono text-[10px] font-bold"></span>
-            <span id="pgTime" class="font-mono text-[10px] text-zz-muted/30"></span>
+            <span id="pgTime" class="font-mono text-[10px] text-zz-muted/90"></span>
           </div>
           <div class="flex gap-0.5">
-            <button class="rounded-zz-sm px-2 py-1 font-mono text-[10px] text-zz-muted/50 transition-colors hover:bg-zz-bg hover:text-zz-muted" onclick="copyResponse()">Copy</button>
-            <button class="rounded-zz-sm px-2 py-1 font-mono text-[10px] text-zz-muted/50 transition-colors hover:bg-zz-bg hover:text-zz-muted" onclick="formatJSON()">Format</button>
+            <button class="rounded-zz-sm px-2 py-1 font-mono text-[10px] text-zz-muted/80 transition-colors hover:bg-zz-bg hover:text-zz-muted" onclick="copyResponse()">Copy</button>
+            <button class="rounded-zz-sm px-2 py-1 font-mono text-[10px] text-zz-muted/80 transition-colors hover:bg-zz-bg hover:text-zz-muted" onclick="formatJSON()">Format</button>
           </div>
         </div>
-        <pre id="pgOutput" class="max-h-80 overflow-auto p-5 font-mono text-xs leading-5 text-zz-muted/50"><span class="text-zz-muted/30">// Klik "Send" atau pilih quick example</span></pre>
+        <pre id="pgOutput" class="max-h-80 overflow-auto p-5 font-mono text-xs leading-5 text-zz-muted/80"><span class="text-zz-muted/90">// Klik "Send" atau pilih quick example</span></pre>
       </div>
 
       <div id="pgHistory" class="mt-3 hidden">
         <div class="mb-2 flex items-center justify-between">
-          <span class="font-mono text-[10px] text-zz-muted/50">History</span>
-          <button class="font-mono text-[10px] text-zz-muted/30 transition-colors hover:text-zz-muted" onclick="clearHistory()">Clear</button>
+          <span class="font-mono text-[10px] text-zz-muted/80">History</span>
+          <button class="font-mono text-[10px] text-zz-muted/90 transition-colors hover:text-zz-muted" onclick="clearHistory()">Clear</button>
         </div>
         <div id="pgHistoryList" class="flex flex-col gap-1 max-h-28 overflow-y-auto"></div>
       </div>
 
       <div class="reveal mt-6">
-        <span class="mb-2 block font-mono text-[10px] text-zz-muted/50">Quick Examples</span>
+        <span class="mb-2 block font-mono text-[10px] text-zz-muted/80">Quick Examples</span>
         <div class="flex flex-wrap gap-1.5">
           <button class="rounded-zz-sm border border-zz-border bg-zz-surface px-2.5 py-1 font-mono text-[11px] text-zz-muted transition-colors hover:border-zz-muted/50 hover:text-zz-text" onclick="quickTry('GET','/api/home')">Latest Anime</button>
           <button class="rounded-zz-sm border border-zz-border bg-zz-surface px-2.5 py-1 font-mono text-[11px] text-zz-muted transition-colors hover:border-zz-muted/50 hover:text-zz-text" onclick="quickTry('GET','/api/lk21/home')">LK21 Movies</button>
@@ -878,11 +878,11 @@
   <!-- FOOTER -->
   <footer class="border-t border-zz-border py-6">
     <div class="mx-auto flex max-w-5xl items-center justify-between px-6 md:px-8">
-      <div class="flex items-center gap-2 font-mono text-xs text-zz-muted/50">
+      <div class="flex items-center gap-2 font-mono text-xs text-zz-muted/80">
         <svg class="h-3 w-3 text-zz-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
         rzfan03/api
       </div>
-      <span class="text-xs text-zz-muted/30">Samehadaku · LK21 · Komiku</span>
+      <span class="text-xs text-zz-muted/90">Samehadaku · LK21 · Komiku</span>
     </div>
   </footer>
 

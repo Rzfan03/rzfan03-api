@@ -156,7 +156,7 @@ async function sendRequest() {
   if (!path) return;
 
   sendBtn.innerHTML = '<svg class="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10" stroke-dasharray="30 60"/></svg>Sending';
-  pgOutput.innerHTML = '<span style="color:rgba(134,126,142,.3);">Loading...</span>';
+  pgOutput.innerHTML = '<span style="color:rgba(134,126,142,.7);">Loading...</span>';
   pgStatus.textContent = ''; pgStatus.style.cssText = 'padding:4px 8px;font-size:10px;font-weight:700;border-radius:4px;';
   pgTime.textContent = '';
 
@@ -244,7 +244,7 @@ function renderHistory() {
       <span class="shrink-0 font-mono" style="padding:4px 8px;font-size:9px;font-weight:700;border-radius:4px;background:${isGet ? 'rgba(0,180,66,.1)' : 'rgba(234,179,8,.1)'};color:${isGet ? '#00B442' : '#EAB308'};">${h.method}</span>
       <code class="flex-1 truncate font-mono text-zz-muted" style="font-size:11px;">${h.path}</code>
       <span class="shrink-0 font-mono" style="font-size:10px;color:${statusColor};">${h.status}</span>
-      <span class="shrink-0 font-mono text-zz-muted" style="font-size:10px;opacity:.3;">${h.time}ms</span>
+      <span class="shrink-0 font-mono text-zz-muted" style="font-size:10px;opacity:.6;">${h.time}ms</span>
     </button>`;
   }).join('');
 }
