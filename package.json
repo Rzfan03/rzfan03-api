@@ -1,0 +1,21 @@
+{
+  "name": "rzfan03-api",
+  "version": "1.0.0",
+  "description": "All-in-One REST API - Anime, Movies, Manga, Downloaders, Tools",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.0",
+    "cheerio": "^1.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0",
+    "express": "^4.21.0",
+    "express-rate-limit": "^7.4.0",
+    "qrcode": "^1.5.3"
+  },
+  "author": "rzfan03",
+  "license": "MIT"
+}
