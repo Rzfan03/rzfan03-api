@@ -1,0 +1,16 @@
+{
+  "name": "Rzfan03 API Documentation",
+  "short_name": "Rzfan03 API",
+  "description": "Free All-in-One REST API — Anime, Film, Manga, Downloader, Tools",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#14121A",
+  "theme_color": "#14121A",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2314121A'/><text y='.9em' font-size='70' x='15'>⚡</text></svg>",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

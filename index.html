@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
+  <title>Rzfan03 API — All-in-One REST API (Anime, Film, Manga, Downloader, Tools)</title>
+  <meta name="description" content="Free All-in-One REST API tanpa API key. Akses data Anime (Samehadaku), Film (LK21), Manga (Komiku), Downloader (YouTube/TikTok/IG), dan Utility Tools. 34+ endpoints, 6 kategori.">
+  <meta name="keywords" content="REST API, free API, anime API, manga API, movie API, lk21 api, samehadaku api, komiku api, youtube downloader api, tiktok downloader api, no api key, Indonesia API, open source API">
+  <meta name="author" content="Rzfan03">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://rzfan03-api.vercel.app/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rzfan03 API">
+  <meta property="og:title" content="Rzfan03 API — All-in-One REST API">
+  <meta property="og:description" content="Free REST API tanpa API key. Anime, Film, Manga, Downloader, Tools — 34+ endpoints.">
+  <meta property="og:url" content="https://rzfan03-api.vercel.app/">
+  <meta property="og:image" content="https://rzfan03-api.vercel.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Rzfan03 API — All-in-One REST API Documentation">
+  <meta property="og:locale" content="id_ID">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@Rzfan03">
+  <meta name="twitter:creator" content="@Rzfan03">
+  <meta name="twitter:title" content="Rzfan03 API — All-in-One REST API">
+  <meta name="twitter:description" content="Free REST API tanpa API key. Anime, Film, Manga, Downloader, Tools — 34+ endpoints.">
+  <meta name="twitter:image" content="https://rzfan03-api.vercel.app/og-image.png">
+  <meta name="twitter:image:alt" content="Rzfan03 API Documentation">
+
+  <!-- Theme & PWA -->
+  <meta name="theme-color" content="#14121A">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Rzfan03 API">
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://rzfan03-api.vercel.app/#webapp",
+        "name": "Rzfan03 API",
+        "url": "https://rzfan03-api.vercel.app/",
+        "description": "Free All-in-One REST API tanpa API key. Akses data Anime, Film, Manga, Downloader, dan Utility Tools.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "IDR"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Rzfan03",
+          "url": "https://github.com/Rzfan03"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Rzfan03"
+        },
+        "inLanguage": ["id", "en"]
+      },
+      {
+        "@type": "APIReference",
+        "@id": "https://rzfan03-api.vercel.app/#api",
+        "name": "Rzfan03 API",
+        "url": "https://rzfan03-api.vercel.app",
+        "description": "REST API endpoints untuk Anime, Film, Manga, Downloader, dan Tools",
+        "documentation": "https://rzfan03-api.vercel.app/",
+        "provider": {
+          "@type": "Person",
+          "name": "Rzfan03"
+        },
+        "numberOfItems": 34
+      }
+    ]
+  }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Space Grotesk', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['Fira Code', 'monospace'],
+          },
+          colors: {
+            zz: {
+              bg: '#14121A',
+              surface: '#16171D',
+              surface2: '#1E1F28',
+              border: '#3B3440',
+              text: '#FFFFFF',
+              muted: '#867E8E',
+              accent: '#6C3BFF',
+              accent2: '#646CFF',
+              accent3: '#8E5CD9',
+              accentLight: '#9F7AEA',
+              success: '#00B442',
+              warning: '#EAB308',
+              error: '#FF4466',
+            },
+          },
+          borderRadius: { zz: '8px', 'zz-sm': '4px' },
+        },
+      },
+    }
+  </script>
+  <style>
+    body { font-size: 16px; line-height: 1.6; }
+    @media (min-width: 768px) { body { font-size: 18px; } }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+    .reveal { opacity: 0; transform: translateY(8px); transition: opacity .4s ease, transform .4s ease; }
+    .reveal.vis { opacity: 1; transform: none; }
+    .reveal-d1 { transition-delay: .05s; }
+    .reveal-d2 { transition-delay: .1s; }
+    .reveal-d3 { transition-delay: .15s; }
+    .reveal-d4 { transition-delay: .2s; }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #3B3440; border-radius: 4px; }
+    .ep-body { display: none; }
+    .ep.open .ep-body { display: block; }
+    .ep.open .ep-chevron { transform: rotate(180deg); }
+    #mobileMenu { opacity: 0; pointer-events: none; transition: opacity .2s; }
+    #mobileMenu.open { opacity: 1; pointer-events: auto; }
+    #mobileMenu .menu-panel { transform: translateX(100%); transition: transform .25s cubic-bezier(.4,0,.2,1); }
+    #mobileMenu.open .menu-panel { transform: none; }
+    .search-box:focus-within { border-color: #6C3BFF; box-shadow: 0 0 0 3px rgba(108,59,255,.1); }
+    .pg-input:focus { border-color: #8E5CD9; box-shadow: 0 0 0 3px rgba(142,92,217,.1); }
+  </style>
+</head>
+<body class="bg-zz-bg text-zz-text font-sans antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed inset-x-0 top-0 z-50 h-16 border-b border-zz-border bg-zz-bg/90 backdrop-blur-xl">
+    <div class="mx-auto flex h-full max-w-5xl items-center justify-between px-6 md:px-8">
+      <a href="#" class="flex items-center gap-2 font-mono text-lg font-semibold tracking-tight">
+        <svg class="h-4 w-4 text-zz-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+        rzfan03<span class="text-zz-accent">/</span>api
+      </a>
+      <div class="hidden items-center gap-8 md:flex">
+        <a href="#fitur" class="text-sm text-zz-muted transition-colors hover:text-zz-text">Fitur</a>
+        <a href="#docs" class="text-sm text-zz-muted transition-colors hover:text-zz-text">Docs</a>
+        <a href="#playground" class="text-sm text-zz-muted transition-colors hover:text-zz-text">Playground</a>
+        <a href="https://github.com/Rzfan03/rzfan03-api" target="_blank" rel="noopener" class="flex items-center gap-2 rounded-zz border border-zz-border px-3 py-1.5 text-xs text-zz-muted transition-colors hover:border-zz-muted hover:text-zz-text">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+      <button class="flex flex-col gap-[5px] md:hidden" id="menuBtn" aria-label="Menu">
+        <span class="block h-[1.5px] w-5 bg-zz-muted transition-all"></span>
+        <span class="block h-[1.5px] w-5 bg-zz-muted transition-all"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu" class="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm">
+    <div class="menu-panel absolute right-0 top-0 h-full w-72 border-l border-zz-border bg-zz-surface p-8">
+      <div class="mb-8 flex items-center justify-between">
+        <span class="font-mono text-lg font-semibold">Menu</span>
+        <button id="closeMenu" class="text-zz-muted hover:text-zz-text transition-colors" aria-label="Close">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="flex flex-col gap-1">
+        <a href="#fitur" class="mobile-link rounded-zz px-4 py-2.5 text-sm text-zz-muted transition-colors hover:bg-zz-surface2 hover:text-zz-text">Fitur</a>
+        <a href="#docs" class="mobile-link rounded-zz px-4 py-2.5 text-sm text-zz-muted transition-colors hover:bg-zz-surface2 hover:text-zz-text">Docs</a>
+        <a href="#playground" class="mobile-link rounded-zz px-4 py-2.5 text-sm text-zz-muted transition-colors hover:bg-zz-surface2 hover:text-zz-text">Playground</a>
+        <a href="https://github.com/Rzfan03/rzfan03-api" target="_blank" rel="noopener" class="mobile-link mt-4 rounded-zz border border-zz-border px-4 py-2.5 text-sm text-zz-muted transition-colors hover:bg-zz-surface2 hover:text-zz-text">GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="pt-24 pb-16 md:pt-32 md:pb-20">
+    <div class="mx-auto max-w-5xl px-6 md:px-8">
+      <div class="max-w-2xl">
+        <div class="reveal mb-5 inline-flex items-center gap-2 rounded-zz-sm bg-zz-accent/10 px-3 py-1 font-mono text-xs text-zz-accent">
+          <span class="h-1.5 w-1.5 rounded-full bg-zz-success"></span>
+          v1.0 — Free, no API key
+        </div>
+        <h1 class="reveal reveal-d1 text-4xl font-bold leading-tight tracking-tight md:text-[56px] md:leading-[1.1]">
+          All-in-One<br>REST API
+        </h1>
+        <p class="reveal reveal-d2 mt-5 max-w-lg text-zz-muted">
+          Anime, Film, Manga, Downloader, Tools — satu API untuk semua. Tanpa API key, tanpa batas.
+        </p>
+        <div class="reveal reveal-d3 mt-8 flex flex-wrap gap-3">
+          <a href="#playground" class="inline-flex items-center gap-2 rounded-zz bg-zz-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zz-accent3">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Coba Sekarang
+          </a>
+          <a href="#docs" class="inline-flex items-center gap-2 rounded-zz border border-zz-border px-5 py-2.5 text-sm text-zz-muted transition-colors hover:border-zz-muted hover:text-zz-text">
+            Dokumentasi
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal reveal-d4 mt-12 flex flex-wrap items-center gap-8 border-t border-zz-border pt-6">
+        <div>
+          <span class="block font-mono text-2xl font-bold" data-count="34">0</span>
+          <span class="text-sm text-zz-muted">Endpoints</span>
+        </div>
+        <div class="h-8 w-px bg-zz-border"></div>
+        <div>
+          <span class="block font-mono text-2xl font-bold" data-count="6">0</span>
+          <span class="text-sm text-zz-muted">Kategori</span>
+        </div>
+        <div class="h-8 w-px bg-zz-border"></div>
+        <div>
+          <span class="block font-mono text-2xl font-bold">$0</span>
+          <span class="text-sm text-zz-muted">Biaya</span>
+        </div>
+      </div>
+
+      <div class="reveal reveal-d4 mt-10 overflow-hidden rounded-zz border border-zz-border bg-zz-surface">
+        <div class="flex items-center gap-2 border-b border-zz-border px-4 py-2.5">
+          <span class="h-2.5 w-2.5 rounded-full bg-zz-border"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-zz-border"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-zz-border"></span>
+          <span class="ml-2 font-mono text-xs text-zz-muted/40">terminal</span>
+        </div>
+        <div class="p-5 font-mono text-xs leading-6 md:text-sm md:leading-7">
+          <div><span class="text-zz-muted">$ </span><span class="text-zz-text">curl</span> <span class="text-zz-muted/60">https://rzfan03-api.vercel.app/api/home</span></div>
+          <div class="mt-2 text-zz-muted/30">{</div>
+          <div class="pl-4 text-zz-muted/50">"success": <span class="text-zz-success">true</span>,</div>
+          <div class="pl-4 text-zz-muted/50">"data": {</div>
+          <div class="pl-8 text-zz-muted/50">"latest": <span class="text-zz-muted/30">[ ... ]</span></div>
+          <div class="pl-4 text-zz-muted/50">}</div>
+          <div class="text-zz-muted/30">}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="fitur" class="border-t border-zz-border py-16">
+    <div class="mx-auto max-w-5xl px-6 md:px-8">
+      <div class="reveal mb-8">
+        <span class="mb-2 block font-mono text-xs uppercase tracking-widest text-zz-accent">Features</span>
+        <h2 class="text-2xl font-bold md:text-3xl">Enam kategori, satu API</h2>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+        <a href="#docs" data-doc-cat="anime" class="reveal group rounded-zz border border-zz-border bg-zz-surface p-5 transition-colors hover:border-zz-muted/40">
+          <div class="mb-3 flex h-9 w-9 items-center justify-center rounded-zz bg-zz-accent/10">
+            <svg class="h-4 w-4 text-zz-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+          </div>
+          <h3 class="font-semibold">Anime</h3>
+          <p class="mt-1.5 text-sm text-zz-muted">Latest, ongoing, complete, detail, genre, schedule dari Samehadaku.</p>
+          <div class="mt-3"><code class="rounded-zz-sm bg-zz-bg px-1.5 py-0.5 font-mono text-xs text-zz-muted">10 endpoints</code></div>
+        </a>
+        <a href="#docs" data-doc-cat="lk21" class="reveal reveal-d1 group rounded-zz border border-zz-border bg-zz-surface p-5 transition-colors hover:border-zz-muted/40">
+          <div class="mb-3 flex h-9 w-9 items-center justify-center rounded-zz bg-zz-accent3/10">
+            <svg class="h-4 w-4 text-zz-accent3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/></svg>
+          </div>
+          <h3 class="font-semibold">Film (LK21)</h3>
+          <p class="mt-1.5 text-sm text-zz-muted">300+ film, detail, rating, aktor, server streaming, download.</p>
+          <div class="mt-3"><code class="rounded-zz-sm bg-zz-bg px-1.5 py-0.5 font-mono text-xs text-zz-muted">6 endpoints</code></div>
+        </a>
+        <a href="#docs" data-doc-cat="manga" class="reveal reveal-d2 group rounded-zz border border-zz-border bg-zz-surface p-5 transition-colors hover:border-zz-muted/40">
+          <div class="mb-3 flex h-9 w-9 items-center justify-center rounded-zz bg-zz-accent2/10">
+            <svg class="h-4 w-4 text-zz-accent2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+          </div>
+          <h3 class="font-semibold">Manga</h3>
+          <p class="mt-1.5 text-sm text-zz-muted">Populer, chapter, library, genre, search dari Komiku.org.</p>
+          <div class="mt-3"><code class="rounded-zz-sm bg-zz-bg px-1.5 py-0.5 font-mono text-xs text-zz-muted">7 endpoints</code></div>
+        </a>
+        <a href="#docs" data-doc-cat="downloader" class="reveal group rounded-zz border border-zz-border bg-zz-surface p-5 transition-colors hover:border-zz-muted/40">
+          <div class="mb-3 flex h-9 w-9 items-center justify-center rounded-zz bg-zz-success/10">
+            <svg class="h-4 w-4 text-zz-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </div>
+          <h3 class="font-semibold">Downloader</h3>
+          <p class="mt-1.5 text-sm text-zz-muted">YouTube, TikTok, Instagram, Twitter — tanpa watermark.</p>
+          <div class="mt-3"><code class="rounded-zz-sm bg-zz-bg px-1.5 py-0.5 font-mono text-xs text-zz-muted">4 endpoints</code></div>
+        </a>
+        <a href="#docs" data-doc-cat="tools" class="reveal reveal-d1 group rounded-zz border border-zz-border bg-zz-surface p-5 transition-colors hover:border-zz-muted/40">
+          <div class="mb-3 flex h-9 w-9 items-center justify-center rounded-zz bg-zz-warning/10">
+            <svg class="h-4 w-4 text-zz-warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3 class="font-semibold">Tools</h3>
+          <p class="mt-1.5 text-sm text-zz-muted">QR Code, Base64, IP Lookup, Currency, Short URL.</p>
+          <div class="mt-3"><code class="rounded-zz-sm bg-zz-bg px-1.5 py-0.5 font-mono text-xs text-zz-muted">6 endpoints</code></div>
+        </a>
+        <a href="#docs" data-doc-cat="search" class="reveal reveal-d2 group rounded-zz border border-zz-accent/20 bg-zz-accent/5 p-5 transition-colors hover:border-zz-accent/40">
+          <div class="mb-3 flex h-9 w-9 items-center justify-center rounded-zz bg-zz-accent/10">
+            <svg class="h-4 w-4 text-zz-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h3 class="font-semibold">Unified Search</h3>
+          <p class="mt-1.5 text-sm text-zz-muted">Satu request, tiga sumber — anime, film, manga sekaligus.</p>
+          <div class="mt-3"><code class="rounded-zz-sm bg-zz-bg px-1.5 py-0.5 font-mono text-xs text-zz-accent">1 endpoint</code></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCS -->
+  <section id="docs" class="border-t border-zz-border py-16">
+    <div class="mx-auto max-w-5xl px-6 md:px-8">
+      <div class="reveal mb-6">
+        <span class="mb-2 block font-mono text-xs uppercase tracking-widest text-zz-accent">Documentation</span>
+        <h2 class="text-2xl font-bold md:text-3xl">Endpoints</h2>
+        <p class="mt-1.5 text-sm text-zz-muted">Base URL: <code class="rounded-zz-sm bg-zz-surface px-1.5 py-0.5 font-mono text-zz-muted">https://rzfan03-api.vercel.app</code></p>
+      </div>
+
+      <div class="reveal mb-5">
+        <div class="search-box relative rounded-zz border border-zz-border bg-zz-surface transition-all">
+          <svg class="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-zz-muted/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input id="epSearch" type="text" placeholder="Cari endpoint... (Ctrl+K)" class="pg-input w-full rounded-zz bg-transparent py-2.5 pl-10 pr-12 font-mono text-sm text-zz-text outline-none placeholder:text-zz-muted/40">
+          <kbd class="absolute right-3 top-1/2 -translate-y-1/2 rounded-zz-sm border border-zz-border bg-zz-bg px-1.5 py-0.5 font-mono text-[10px] text-zz-muted/40">Ctrl K</kbd>
+        </div>
+      </div>
+
+      <div class="reveal mb-5 flex flex-wrap gap-1" id="docTabs">
+        <button class="doc-tab active rounded-zz-sm bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:text-zz-text" data-cat="anime">Anime</button>
+        <button class="doc-tab rounded-zz-sm px-3 py-1.5 font-mono text-xs text-zz-muted transition-colors hover:text-zz-text" data-cat="lk21">LK21</button>
+        <button class="doc-tab rounded-zz-sm px-3 py-1.5 font-mono text-xs text-zz-muted transition-colors hover:text-zz-text" data-cat="manga">Manga</button>
+        <button class="doc-tab rounded-zz-sm px-3 py-1.5 font-mono text-xs text-zz-muted transition-colors hover:text-zz-text" data-cat="downloader">Downloader</button>
+        <button class="doc-tab rounded-zz-sm px-3 py-1.5 font-mono text-xs text-zz-muted transition-colors hover:text-zz-text" data-cat="tools">Tools</button>
+        <button class="doc-tab rounded-zz-sm px-3 py-1.5 font-mono text-xs text-zz-muted transition-colors hover:text-zz-text" data-cat="search">Search</button>
+      </div>
+
+      <div id="docPanels">
+        <!-- ANIME -->
+        <div class="doc-panel" data-cat="anime">
+          <div class="ep rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/home</code>
+              <span class="ml-auto text-xs text-zz-muted/50">Latest Episodes</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-3 text-sm text-zz-muted">25 episode anime terbaru dari Samehadaku.</p>
+              <pre class="mb-4 overflow-x-auto rounded-zz bg-zz-bg p-4 font-mono text-xs leading-5 text-zz-muted/50">{ "success": true, "data": { "latest": [ ... ] } }</pre>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/home')">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/anime/ongoing</code>
+              <span class="ml-auto text-xs text-zz-muted/50">Ongoing</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-2 text-sm text-zz-muted">Anime ongoing yang sedang tayang.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Query: <code class="font-mono text-zz-accent2/70">?page=</code> number (optional, default: 1)</p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/anime/ongoing')">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/anime/complete</code>
+              <span class="ml-auto text-xs text-zz-muted/50">Complete</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-2 text-sm text-zz-muted">Anime yang sudah tamat.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Query: <code class="font-mono text-zz-accent2/70">?page=</code> number (optional, default: 1)</p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/anime/complete')">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/anime/list</code>
+              <span class="ml-auto text-xs text-zz-muted/50">All Anime</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-2 text-sm text-zz-muted">Semua daftar anime.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Query: <code class="font-mono text-zz-accent2/70">?page=</code> number (optional, default: 1)</p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/anime/list')">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/anime/:slug</code>
+              <span class="ml-auto text-xs text-zz-muted/50">Detail</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-2 text-sm text-zz-muted">Score, status, episodes, genres, synopsis.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Param: <code class="font-mono text-zz-accent2/70">:slug</code> — anime slug dari Samehadaku</p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/anime/solo-leveling-season-2')">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/episode/:slug</code>
+              <span class="ml-auto text-xs text-zz-muted/50">Episode</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-2 text-sm text-zz-muted">Link streaming dan download per episode.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Param: <code class="font-mono text-zz-accent2/70">:slug</code> — episode slug</p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/episode/solo-leveling-season-2-episode-1')">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/genres</code>
+              <span class="ml-auto text-xs text-zz-muted/50">All Genres</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-3 text-sm text-zz-muted">Semua genre anime yang tersedia.</p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/genres')">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/genres/:slug</code>
+              <span class="ml-auto text-xs text-zz-muted/50">By Genre</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-2 text-sm text-zz-muted">Anime berdasarkan genre.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Param: <code class="font-mono text-zz-accent2/70">:slug</code> — genre slug · Query: <code class="font-mono text-zz-accent2/70">?page=</code> number (optional)</p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/genres/action')">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/anime/search?q=</code>
+              <span class="ml-auto text-xs text-zz-muted/50">Search</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-2 text-sm text-zz-muted">Cari anime berdasarkan judul.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Query: <code class="font-mono text-zz-accent2/70">?q=</code> string (required)</p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/anime/search?q=naruto')">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/jadwal</code>
+              <span class="ml-auto text-xs text-zz-muted/50">Schedule</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-3 text-sm text-zz-muted">Jadwal rilis anime per hari.</p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/jadwal')">Try it</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- LK21 -->
+        <div class="doc-panel hidden" data-cat="lk21">
+          <div class="ep rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/lk21/home</code>
+              <span class="ml-auto text-xs text-zz-muted/50">300+ Movies</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-3 text-sm text-zz-muted">Film terbaru dengan poster, tahun, slug. Server-side — 300 film per request.</p>
+              <pre class="mb-4 overflow-x-auto rounded-zz bg-zz-bg p-4 font-mono text-xs leading-5 text-zz-muted/50">{ "title": "...", "slug": "...", "poster": "...", "year": "2024" }</pre>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/lk21/home')">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/lk21/movie/:slug</code>
+              <span class="ml-auto text-xs text-zz-muted/50">Movie Detail</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-3 text-sm text-zz-muted">Poster, synopsis, rating, aktor, servers streaming, link download.</p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/lk21/movie/tigers-trigger-2024')">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/lk21/search?q=</code>
+              <span class="ml-auto text-xs text-zz-muted/50">Search</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-2 text-sm text-zz-muted">Cari film berdasarkan judul.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Query: <code class="font-mono text-zz-accent2/70">?q=</code> string (required)</p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/lk21/search?q=batman')">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/lk21/genre/:slug</code>
+              <span class="ml-auto text-xs text-zz-muted/50">By Genre</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-2 text-sm text-zz-muted">Film berdasarkan genre.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Param: <code class="font-mono text-zz-accent2/70">:slug</code> — genre slug · Query: <code class="font-mono text-zz-accent2/70">?page=</code> number (optional)</p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/lk21/genre/action')">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/lk21/country/:slug</code>
+              <span class="ml-auto text-xs text-zz-muted/50">By Country</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-2 text-sm text-zz-muted">Film berdasarkan negara.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Param: <code class="font-mono text-zz-accent2/70">:slug</code> — country slug · Query: <code class="font-mono text-zz-accent2/70">?page=</code> number (optional)</p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/lk21/country/indonesia')">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/lk21/list</code>
+              <span class="ml-auto text-xs text-zz-muted/50">All Movies</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-2 text-sm text-zz-muted">Semua daftar film LK21.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Query: <code class="font-mono text-zz-accent2/70">?page=</code> number (optional, default: 1)</p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/lk21/list')">Try it</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- MANGA -->
+        <div class="doc-panel hidden" data-cat="manga">
+          <div class="ep rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/manga/home</code>
+              <span class="ml-auto text-xs text-zz-muted/50">Popular + Latest</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-3 text-sm text-zz-muted">Manga populer dan terbaru dari Komiku.org.</p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/manga/home')">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/manga/:slug</code>
+              <span class="ml-auto text-xs text-zz-muted/50">Detail</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-2 text-sm text-zz-muted">Detail manga + chapter list.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Param: <code class="font-mono text-zz-accent2/70">:slug</code> — manga slug dari Komiku</p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/manga/one-piece')">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/manga/chapter/:slug</code>
+              <span class="ml-auto text-xs text-zz-muted/50">Chapter Pages</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-2 text-sm text-zz-muted">Halaman gambar chapter manga.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Param: <code class="font-mono text-zz-accent2/70">:slug</code> — chapter slug</p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/manga/chapter/one-piece-chapter-1')">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/manga/search?q=</code>
+              <span class="ml-auto text-xs text-zz-muted/50">Search</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-2 text-sm text-zz-muted">Cari manga via htmx API Komiku.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Query: <code class="font-mono text-zz-accent2/70">?q=</code> string (required)</p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/manga/search?q=naruto')">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/manga/genres</code>
+              <span class="ml-auto text-xs text-zz-muted/50">Genres</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-3 text-sm text-zz-muted">Semua genre manga yang tersedia.</p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/manga/genres')">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/manga/genre/:slug</code>
+              <span class="ml-auto text-xs text-zz-muted/50">By Genre</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-2 text-sm text-zz-muted">Manga berdasarkan genre.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Param: <code class="font-mono text-zz-accent2/70">:slug</code> — genre slug · Query: <code class="font-mono text-zz-accent2/70">?page=</code> number (optional)</p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/manga/genre/action')">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/manga/library</code>
+              <span class="ml-auto text-xs text-zz-muted/50">Library</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-2 text-sm text-zz-muted">Library manga dengan filter parameters.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Query: <code class="font-mono text-zz-accent2/70">?page=</code> number (optional) · additional filter params supported</p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/manga/library')">Try it</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- DOWNLOADER -->
+        <div class="doc-panel hidden" data-cat="downloader">
+          <div class="ep rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/download/youtube?url=</code>
+              <span class="ml-auto text-xs text-zz-muted/50">YouTube</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-2 text-sm text-zz-muted">Download video dari YouTube.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Query: <code class="font-mono text-zz-accent2/70">?url=</code> string (required) — YouTube URL</p>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/download/tiktok?url=</code>
+              <span class="ml-auto text-xs text-zz-muted/50">TikTok</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-2 text-sm text-zz-muted">Download TikTok tanpa watermark.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Query: <code class="font-mono text-zz-accent2/70">?url=</code> string (required)</p>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/download/instagram?url=</code>
+              <span class="ml-auto text-xs text-zz-muted/50">Instagram</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-2 text-sm text-zz-muted">Download Reel/Video dari Instagram.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Query: <code class="font-mono text-zz-accent2/70">?url=</code> string (required)</p>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/download/twitter?url=</code>
+              <span class="ml-auto text-xs text-zz-muted/50">Twitter/X</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-2 text-sm text-zz-muted">Download video dari tweet.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Query: <code class="font-mono text-zz-accent2/70">?url=</code> string (required)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TOOLS -->
+        <div class="doc-panel hidden" data-cat="tools">
+          <div class="ep rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-warning/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-warning">POST</span>
+              <code class="font-mono text-sm text-zz-text">/api/tools/qrcode</code>
+              <span class="ml-auto text-xs text-zz-muted/50">QR Generator</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-3 text-sm text-zz-muted">Generate QR Code sebagai base64 image.</p>
+              <pre class="mb-4 overflow-x-auto rounded-zz bg-zz-bg p-4 font-mono text-xs leading-5 text-zz-muted/50">{ "text": "https://example.com" }</pre>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="quickTry('POST','/api/tools/qrcode',JSON.stringify({text:'https://rzfan03-api.vercel.app'},null,2))">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-warning/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-warning">POST</span>
+              <code class="font-mono text-sm text-zz-text">/api/tools/base64/encode</code>
+              <span class="ml-auto text-xs text-zz-muted/50">Base64 Encode</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <pre class="mb-4 overflow-x-auto rounded-zz bg-zz-bg p-4 font-mono text-xs leading-5 text-zz-muted/50">{ "text": "Hello World" }</pre>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="quickTry('POST','/api/tools/base64/encode',JSON.stringify({text:'Hello World'},null,2))">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-warning/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-warning">POST</span>
+              <code class="font-mono text-sm text-zz-text">/api/tools/base64/decode</code>
+              <span class="ml-auto text-xs text-zz-muted/50">Base64 Decode</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <pre class="mb-4 overflow-x-auto rounded-zz bg-zz-bg p-4 font-mono text-xs leading-5 text-zz-muted/50">{ "encoded": "SGVsbG8gV29ybGQ=" }</pre>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="quickTry('POST','/api/tools/base64/decode',JSON.stringify({encoded:'SGVsbG8gV29ybGQ='},null,2))">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/tools/ip/:ip</code>
+              <span class="ml-auto text-xs text-zz-muted/50">IP Lookup</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-2 text-sm text-zz-muted">Country, city, ISP dari IP address.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Param: <code class="font-mono text-zz-accent2/70">:ip</code> — IP address</p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/tools/ip/8.8.8.8')">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/tools/currency?from=&to=&amount=</code>
+              <span class="ml-auto text-xs text-zz-muted/50">Currency</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-2 text-sm text-zz-muted">Konversi mata uang.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Query: <code class="font-mono text-zz-accent2/70">?from=USD&to=IDR&amount=1</code></p>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/tools/currency?from=USD&to=IDR&amount=1')">Try it</button>
+            </div>
+          </div>
+          <div class="ep mt-1.5 rounded-zz border border-zz-border">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-warning/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-warning">POST</span>
+              <code class="font-mono text-sm text-zz-text">/api/tools/shorturl</code>
+              <span class="ml-auto text-xs text-zz-muted/50">Short URL</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <pre class="mb-4 overflow-x-auto rounded-zz bg-zz-bg p-4 font-mono text-xs leading-5 text-zz-muted/50">{ "url": "https://google.com" }</pre>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="quickTry('POST','/api/tools/shorturl',JSON.stringify({url:'https://google.com'},null,2))">Try it</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SEARCH -->
+        <div class="doc-panel hidden" data-cat="search">
+          <div class="ep rounded-zz border border-zz-accent/30 bg-zz-accent/5">
+            <button class="flex w-full items-center gap-3 px-5 py-3 text-left" onclick="toggleEp(this)">
+              <span class="shrink-0 rounded-zz-sm bg-zz-success/10 px-2 py-0.5 font-mono text-[10px] font-bold text-zz-success">GET</span>
+              <code class="font-mono text-sm text-zz-text">/api/search?q=query</code>
+              <span class="ml-1 shrink-0 rounded-zz-sm bg-zz-accent/20 px-1.5 py-0.5 font-mono text-[9px] font-bold text-zz-accent">UNIFIED</span>
+              <span class="ml-auto text-xs text-zz-muted/50">All Sources</span>
+              <svg class="ep-chevron h-3.5 w-3.5 shrink-0 text-zz-muted/40 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="ep-body border-t border-zz-border px-5 pb-5 pt-4">
+              <p class="mb-3 text-sm text-zz-muted">Satu request ke anime + LK21 + manga sekaligus. Promise.allSettled untuk fault tolerance.</p>
+              <p class="mb-3 text-xs text-zz-muted/70">Query: <code class="font-mono text-zz-accent2/70">?q=</code> string (required)</p>
+              <pre class="mb-4 overflow-x-auto rounded-zz bg-zz-bg p-4 font-mono text-xs leading-5 text-zz-muted/50">{ "success": true, "data": { "anime": [...], "lk21": [...], "manga": [...] } }</pre>
+              <button class="rounded-zz bg-zz-accent/10 px-3 py-1.5 font-mono text-xs text-zz-accent transition-colors hover:bg-zz-accent/20" onclick="tryEndpoint('GET','/api/search?q=one+piece')">Try it</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAYGROUND -->
+  <section id="playground" class="border-t border-zz-border py-16">
+    <div class="mx-auto max-w-5xl px-6 md:px-8">
+      <div class="reveal mb-6">
+        <span class="mb-2 block font-mono text-xs uppercase tracking-widest text-zz-accent">Interactive</span>
+        <h2 class="text-2xl font-bold md:text-3xl">Playground</h2>
+        <p class="mt-1.5 text-sm text-zz-muted">Kirim request langsung dari browser. <kbd class="rounded-zz-sm bg-zz-surface px-1 py-0.5 font-mono text-[10px]">Ctrl+Enter</kbd> untuk kirim.</p>
+      </div>
+
+      <div class="reveal rounded-zz border border-zz-border bg-zz-surface overflow-hidden">
+        <div class="flex items-center border-b border-zz-border">
+          <select id="pgMethod" class="bg-zz-surface2 px-3 py-2.5 font-mono text-xs font-bold text-zz-success outline-none cursor-pointer border-none">
+            <option value="GET">GET</option>
+            <option value="POST">POST</option>
+          </select>
+          <div class="h-5 w-px bg-zz-border"></div>
+          <div class="flex flex-1 items-center">
+            <span class="hidden pl-3 font-mono text-[11px] text-zz-muted/30 lg:inline">https://rzfan03-api.vercel.app</span>
+            <input id="pgUrl" type="text" value="/api/home" class="pg-input flex-1 bg-transparent px-3 py-2.5 font-mono text-sm text-zz-text outline-none placeholder:text-zz-muted/30" placeholder="/api/home" spellcheck="false">
+          </div>
+          <button id="sendBtn" class="flex items-center gap-2 bg-zz-accent px-5 py-2.5 font-mono text-xs font-bold text-white transition-colors hover:bg-zz-accent3" onclick="sendRequest()">
+            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send
+          </button>
+        </div>
+        <div id="pgBodyWrap" class="hidden border-b border-zz-border">
+          <div class="flex items-center justify-between bg-zz-surface2 px-5 py-1.5">
+            <span class="font-mono text-[11px] text-zz-muted/50">Request Body</span>
+            <span class="font-mono text-[10px] text-zz-muted/30">JSON</span>
+          </div>
+          <textarea id="pgBody" rows="4" class="w-full resize-y bg-transparent px-5 pb-3 pt-2 font-mono text-sm text-zz-text outline-none placeholder:text-zz-muted/30" placeholder='{"url": "..."}' spellcheck="false"></textarea>
+        </div>
+        <div class="flex items-center justify-between border-b border-zz-border px-5 py-2">
+          <div class="flex items-center gap-2">
+            <span class="font-mono text-[11px] text-zz-muted/50">Response</span>
+            <span id="pgStatus" class="rounded-zz-sm px-1.5 py-0.5 font-mono text-[10px] font-bold"></span>
+            <span id="pgTime" class="font-mono text-[10px] text-zz-muted/30"></span>
+          </div>
+          <div class="flex gap-0.5">
+            <button class="rounded-zz-sm px-2 py-1 font-mono text-[10px] text-zz-muted/50 transition-colors hover:bg-zz-bg hover:text-zz-muted" onclick="copyResponse()">Copy</button>
+            <button class="rounded-zz-sm px-2 py-1 font-mono text-[10px] text-zz-muted/50 transition-colors hover:bg-zz-bg hover:text-zz-muted" onclick="formatJSON()">Format</button>
+          </div>
+        </div>
+        <pre id="pgOutput" class="max-h-80 overflow-auto p-5 font-mono text-xs leading-5 text-zz-muted/50"><span class="text-zz-muted/30">// Klik "Send" atau pilih quick example</span></pre>
+      </div>
+
+      <div id="pgHistory" class="mt-3 hidden">
+        <div class="mb-2 flex items-center justify-between">
+          <span class="font-mono text-[10px] text-zz-muted/50">History</span>
+          <button class="font-mono text-[10px] text-zz-muted/30 transition-colors hover:text-zz-muted" onclick="clearHistory()">Clear</button>
+        </div>
+        <div id="pgHistoryList" class="flex flex-col gap-1 max-h-28 overflow-y-auto"></div>
+      </div>
+
+      <div class="reveal mt-6">
+        <span class="mb-2 block font-mono text-[10px] text-zz-muted/50">Quick Examples</span>
+        <div class="flex flex-wrap gap-1.5">
+          <button class="rounded-zz-sm border border-zz-border bg-zz-surface px-2.5 py-1 font-mono text-[11px] text-zz-muted transition-colors hover:border-zz-muted/50 hover:text-zz-text" onclick="quickTry('GET','/api/home')">Latest Anime</button>
+          <button class="rounded-zz-sm border border-zz-border bg-zz-surface px-2.5 py-1 font-mono text-[11px] text-zz-muted transition-colors hover:border-zz-muted/50 hover:text-zz-text" onclick="quickTry('GET','/api/lk21/home')">LK21 Movies</button>
+          <button class="rounded-zz-sm border border-zz-border bg-zz-surface px-2.5 py-1 font-mono text-[11px] text-zz-muted transition-colors hover:border-zz-muted/50 hover:text-zz-text" onclick="quickTry('GET','/api/manga/home')">Manga</button>
+          <button class="rounded-zz-sm border border-zz-border bg-zz-surface px-2.5 py-1 font-mono text-[11px] text-zz-muted transition-colors hover:border-zz-muted/50 hover:text-zz-text" onclick="quickTry('GET','/api/search?q=one+piece')">Unified Search</button>
+          <button class="rounded-zz-sm border border-zz-border bg-zz-surface px-2.5 py-1 font-mono text-[11px] text-zz-muted transition-colors hover:border-zz-muted/50 hover:text-zz-text" onclick="quickTry('GET','/api/tools/ip/8.8.8.8')">IP Lookup</button>
+          <button class="rounded-zz-sm border border-zz-border bg-zz-surface px-2.5 py-1 font-mono text-[11px] text-zz-muted transition-colors hover:border-zz-muted/50 hover:text-zz-text" onclick="quickTry('GET','/api/genres')">Genres</button>
+          <button class="rounded-zz-sm border border-zz-border bg-zz-surface px-2.5 py-1 font-mono text-[11px] text-zz-muted transition-colors hover:border-zz-muted/50 hover:text-zz-text" onclick="quickTry('GET','/api/lk21/movie/tigers-trigger-2024')">Film Detail</button>
+          <button class="rounded-zz-sm border border-zz-border bg-zz-surface px-2.5 py-1 font-mono text-[11px] text-zz-muted transition-colors hover:border-zz-muted/50 hover:text-zz-text" onclick="quickTry('GET','/api/manga/search?q=naruto')">Manga Search</button>
+          <button class="rounded-zz-sm border border-zz-border bg-zz-surface px-2.5 py-1 font-mono text-[11px] text-zz-muted transition-colors hover:border-zz-muted/50 hover:text-zz-text" onclick="quickTry('GET','/api/anime/ongoing')">Ongoing</button>
+          <button class="rounded-zz-sm border border-zz-border bg-zz-surface px-2.5 py-1 font-mono text-[11px] text-zz-muted transition-colors hover:border-zz-muted/50 hover:text-zz-text" onclick="quickTry('GET','/api/jadwal')">Schedule</button>
+          <button class="rounded-zz-sm border border-zz-border bg-zz-surface px-2.5 py-1 font-mono text-[11px] text-zz-muted transition-colors hover:border-zz-muted/50 hover:text-zz-text" onclick="quickTry('GET','/api/lk21/genre/horror')">Horror Films</button>
+          <button class="rounded-zz-sm border border-zz-border bg-zz-surface px-2.5 py-1 font-mono text-[11px] text-zz-muted transition-colors hover:border-zz-muted/50 hover:text-zz-text" onclick="quickTry('GET','/api/manga/library')">Manga Library</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-zz-border py-6">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-6 md:px-8">
+      <div class="flex items-center gap-2 font-mono text-xs text-zz-muted/50">
+        <svg class="h-3 w-3 text-zz-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+        rzfan03/api
+      </div>
+      <span class="text-xs text-zz-muted/30">Samehadaku · LK21 · Komiku</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
